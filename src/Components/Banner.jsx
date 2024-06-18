@@ -23,7 +23,7 @@ const Banner = () => {
       ease: "power4.inOut",
     });
     gsap.to(".banner", { scale: 1.3, duration: 1.3, ease: "power4.inOut" }, 0);
-    gsap.to('.blob', {opacity: 1, scale: 1, duration: 1.3, ease: 'power4.inOut'})
+    gsap.to('.blob', {opacity: 1, scale: 1, duration: 1.3, ease: 'power3.out'})
 
     // exiting animation timeline scolltrigger
     const fontTl = gsap.timeline({
@@ -64,7 +64,7 @@ const Banner = () => {
     const { height, width, top, left } = e.target.getBoundingClientRect();
     const x = clientX - (left + width/2);
     const y = clientY -(top + height/2);
-    gsap.to('.blob', { x: x, y: y, scale: 1.1 });
+    gsap.to('.blob', { x: x, y: y, scale: 1.1});
   });
 
   const handleLeave = contextSafe((e) => {
@@ -72,43 +72,46 @@ const Banner = () => {
   });
 
   return (
-    <div className="relative pin h-screen w-screen text-4xl md:text-7xl lg:text-9xl font-bold overflow-hidden">
-      <div className="pic w-full h-full absolute banner bg-[url(/profileCrop.png)] bg-no-repeat bg-cover bg-fixed"></div>
-      <div className="panel-3 h-1/3 md:w-1/2 bg-theme flex pr-8 items-center justify-center md:justify-end">
-        <div className="clippy overflow-hidden">
-          <h1 className={`translate-y-36 banner-headers`}>FRONTEND</h1>
+    <div className="overflow-x-hidden">
+      <div className="-z-10 pic w-full h-full fixed top-0 banner bg-cover bg-[url(/profile-mobile.jpg)] md:bg-[url(/profileCrop.png)] bg-no-repeat bg-fixed"></div>
+      <div className="relative pin h-screen w-screen text-dark text-4xl md:text-7xl lg:text-9xl font-bold">
+        
+        <div className="panel-3 h-1/3 md:w-1/2 bg-theme flex pr-8 items-center justify-center md:justify-end">
+          <div className="clippy overflow-hidden">
+            <h1 className={`translate-y-32 banner-headers`}>FRONTEND</h1>
+          </div>
         </div>
-      </div>
-      <div className="panel-2 h-1/3 md:w-3/4 bg-theme flex pr-8 items-center justify-center md:justify-end">
-        <div className="clippy overflow-hidden">
-          <h1 className={`translate-y-36 banner-headers`}>DEVELOPER_</h1>
+        <div className="panel-2 h-1/3 md:w-3/4 bg-theme flex pr-8 items-center justify-center md:justify-end">
+          <div className="clippy overflow-hidden">
+            <h1 className={`translate-y-32 banner-headers`}>DEVELOPER_</h1>
+          </div>
         </div>
-      </div>
-      <div className="panel-1 relative h-1/3 w-full bg-theme flex pr-8 items-center justify-center md:justify-end">
-        <div className="clippy overflow-hidden">
-          <h1 className={`translate-y-36 banner-headers`}>SATIRTHA ROY</h1>
-        </div>
-        {/* blobs */}
-        <div
-          onMouseMove={handleMove}
-          onMouseLeave={handleLeave}
-          className="absolute left-4 md:left-24 -z-10"
-        >
-          <div className="size-36 relative">
-            <Image
-              alt="Blob"
-              className="absolute opacity-0 scale-50 blob"
-              src="/blob-sm.svg"
-              width={116}
-              height={116}
-            />
-            <Image
-              alt="Blob"
-              className="absolute blob opacity-0 scale-50 bottom-0 right-0 rotate-180"
-              src="/blob-sm.svg"
-              width={116}
-              height={116}
-            />
+        <div className="panel-1 relative h-1/3 w-full bg-theme flex pr-8 items-center justify-center md:justify-end">
+          <div className="clippy overflow-hidden">
+            <h1 className={`translate-y-32 banner-headers`}>SATIRTHA ROY</h1>
+          </div>
+          {/* blobs */}
+          <div
+            onMouseMove={handleMove}
+            onMouseLeave={handleLeave}
+            className="absolute left-4 md:left-24 -z-10"
+          >
+            <div className="size-36 relative">
+              <Image
+                alt="Blob"
+                className="absolute opacity-0 scale-50 blob"
+                src="/blob-sm.svg"
+                width={116}
+                height={116}
+              />
+              <Image
+                alt="Blob"
+                className="absolute blob opacity-0 scale-50 bottom-0 right-0 rotate-180"
+                src="/blob-sm.svg"
+                width={116}
+                height={116}
+              />
+            </div>
           </div>
         </div>
       </div>
