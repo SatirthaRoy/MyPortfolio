@@ -22,8 +22,8 @@ const Banner = () => {
       duration: 1.3,
       ease: "power4.inOut",
     });
-    gsap.to(".banner", { scale: 1.3, duration: 1.3, ease: "power4.inOut" }, 0);
-    gsap.to('.blob', {opacity: 1, scale: 1, duration: 1.3, ease: 'power3.out'})
+    gsap.to(".banner", { scale: 1.3, duration: 1.3, ease: "power3.inOut"},0)
+    gsap.to('.blob', {opacity: 1, scale: 1, duration: 1.3, ease: 'power3.inOut'})
 
     // exiting animation timeline scolltrigger
     const fontTl = gsap.timeline({
@@ -34,12 +34,12 @@ const Banner = () => {
         scrub: 1,
         // markers: true
       },
-      defaults: { duration: 1.3 },
+      defaults: { duration: 1 },
     });
 
     fontTl
-      .to(".banner-headers", { y: 144, stagger: 0.1, ease: "power3.inOut" })
-      .to(".banner", { scale: 1, ease: "power3.inOut" }, 0);
+      .to(".banner-headers", { y: 144, stagger: -0.1, ease: "power2.out" })
+      .to(".banner", { scale: 1, ease: "power2.out" }, 0);
 
     // banner going to left animation timeline scrlltrigger
     const tl = gsap.timeline({

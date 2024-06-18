@@ -6,7 +6,7 @@ import { ReactLenis } from "@studio-freight/react-lenis";
 function SmoothScroll({children}) {
 
   return (
-    <ReactLenis root options={{lerp: .06}}>
+    <ReactLenis root options={{lerp: .07, duration: 1.5, smoothTouch: true}}>
       { children }
     </ReactLenis>
   )

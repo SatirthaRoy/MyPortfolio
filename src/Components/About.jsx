@@ -9,7 +9,9 @@ const About = () => {
 
   useGSAP(() => {
     gsap.to('.about', {y: 0, stagger: .05, ease: 'power3.out', duration: 1, scrollTrigger: {trigger: '.about-pannel', start: 'top bottom'}})
-    gsap.to('.word', {y: 0, stagger: .05, ease: 'power3.out', duration: 1, scrollTrigger: {trigger: '.about-para', start: 'top bottom'}})
+    gsap.to('.word', {y: 0, stagger:{amount: 1}, ease: 'power3.out', scrollTrigger: {trigger: '.about-para', start: 'top 80%'}});
+    gsap.to('.about-pannel', {y: -150, scrollTrigger: {trigger: '.about-pannel', scrub: 1, start: 'bottom bottom'}})
+    gsap.to('.about-para', {y: -250, scrollTrigger: {trigger: '.about-para', scrub: 1, start: 'top bottom'}})
   })
 
   const AboutArr = 'ABOUT_'.split('');
