@@ -40,6 +40,7 @@ const SingleSkill = ({ skill, i }) => {
 
 const Skills = () => {
   const container = useRef();
+  // gsap
   useGSAP(() => {
     gsap.to(".skill-headings", {
       y: 0,
@@ -63,6 +64,24 @@ const Skills = () => {
     const {height } = container.current.getBoundingClientRect();
     const yToGo = height - window.innerHeight;
     skillsTl.to('.skill-pannel', {y: yToGo, ease: 'none'});
+
+    // white fog
+    const fogTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: container.current,
+        start: '90% bottom',
+        endTrigger: '.project-word',
+        end: 'bottom top',
+        scrub: 1,
+        // markers: true
+      }
+    })
+
+    fogTl
+    .to('.fog', {opacity: 1, duration: 1})
+    .to('.fog', {opacity: 0, duration: 1}, '+=.5')
+    .to('.skill-end', {backgroundColor: '#F4F4F4'}, 0)
+
   });
 
   const skillArr = "SKILLS_".split("");
@@ -79,7 +98,7 @@ const Skills = () => {
   ];
 
   return (
-    <div  className="bg-theme skill-end overflow x-hidden">
+    <div className="bg-theme skill-end overflow x-hidden pb-72">
       
       <div ref={container} className="w-11/12 mx-auto py-20">
           <div className="relative skill-pannel">
@@ -99,6 +118,7 @@ const Skills = () => {
           })}
         </div>
       </div>
+      <div className="bg-themeWhite fixed pointer-events-none opacity-0 top-0 h-screen w-screen fog z-50"></div>
     </div>
   );
 };

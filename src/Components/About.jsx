@@ -15,7 +15,7 @@ const About = () => {
   })
 
   const AboutArr = 'ABOUT_'.split('');
-  const paraArr = "A self-driven and passionate frontend developer dedicated to crafting highly interactive and user-centric web applications.".split(' ')
+  const paraArr = "A self-driven and passionate frontend developer dedicated to craft highly interactive and user-centric web applications.".split(' ')
   return (
     <div className='bg-theme py-36'>
       <div className='w-11/12 mx-auto space-y-20'>

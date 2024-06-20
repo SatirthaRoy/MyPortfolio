@@ -29,16 +29,16 @@ const Banner = () => {
     const fontTl = gsap.timeline({
       scrollTrigger: {
         trigger: ".pin",
-        start: "top top",
-        end: "bottom top",
-        scrub: 1,
+        toggleActions: 'play none reverse none',
+        start: "center top",
+        end: "center top",
         // markers: true
       },
       defaults: { duration: 1 },
     });
 
     fontTl
-      .to(".banner-headers", { y: 144, stagger: -0.1, ease: "power2.out" })
+      .to(".banner-headers", { y: 144, stagger: -0.1, ease: "power3.inOut" })
       .to(".banner", { scale: 1, ease: "power2.out" }, 0);
 
     // banner going to left animation timeline scrlltrigger
