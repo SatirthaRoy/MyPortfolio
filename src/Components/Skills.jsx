@@ -16,7 +16,7 @@ const SingleSkill = ({ skill, i }) => {
       duration: 1,
       scrollTrigger: {
         trigger: `.skill-${i}`,
-        start: "top center",
+        start: "top 70%",
         // markers: true
       },
     });
@@ -63,20 +63,6 @@ const Skills = () => {
     const {height } = container.current.getBoundingClientRect();
     const yToGo = height - window.innerHeight;
     skillsTl.to('.skill-pannel', {y: yToGo, ease: 'none'});
-
-    // skill blob
-    // const blobTl = gsap.timeline({
-    //   scrollTrigger: {
-    //     trigger: '.skill-blob',
-    //     start: '.skill-blob',
-    //     start: 'bottom bottom',
-    //     endTrigger: container.current,
-    //     end: 'bottom bottom',
-    //     scrub: true,
-    //     markers: true
-    //   }
-    // })
-    // blobTl.to('.skill-blob', {y: yToGo, ease: 'none'});
   });
 
   const skillArr = "SKILLS_".split("");
@@ -93,9 +79,9 @@ const Skills = () => {
   ];
 
   return (
-    <div  className="bg-theme">
+    <div  className="bg-theme skill-end overflow x-hidden">
       
-      <div ref={container} className="w-11/12 mx-auto py-12">
+      <div ref={container} className="w-11/12 mx-auto py-20">
           <div className="relative skill-pannel">
             <Image className="absolute right-1/2 top-1/2  -translate-y-1/2 translate-x-1/2" src='/blob-sm.svg' height={900} width={900}/>
             <div className="z-10 overflow-hidden clippy flex items-center justify-center text-7xl lg:text-[200px] text-lightDark font-bold">

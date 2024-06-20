@@ -1,14 +1,18 @@
 import About from "@/Components/About";
 import Banner from "@/Components/Banner";
+import Projects from "@/Components/Projects";
 import Skills from "@/Components/Skills";
 
 export default function Home() {
   return (
    <>
     <Banner/>
-    <About/>
-    <Skills/>
-    <div className='h-[300vh] end'></div>
+    <div className="bg-themeWhite">
+      <About/>
+      <Skills/>
+      <Projects/>
+      {/* <div className='h-[100vh] end bg-themeWhite'></div> */}
+    </div>
    </>
   );
 }
