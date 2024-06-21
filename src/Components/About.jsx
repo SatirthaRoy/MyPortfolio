@@ -17,7 +17,7 @@ const About = () => {
   const AboutArr = 'ABOUT_'.split('');
   const paraArr = "A self-driven and passionate frontend developer dedicated to craft highly interactive and user-centric web applications.".split(' ')
   return (
-    <div className='bg-theme py-36'>
+    <div id='about' className='bg-theme py-36'>
       <div className='w-11/12 mx-auto space-y-20'>
         <div className='about-pannel flex items-center text-7xl lg:text-[200px] text-dark font-bold clippy overflow-y-hidden'>
           {AboutArr.map((l, i) => <div className='about translate-y-56' key={i}>{l}</div>)}
