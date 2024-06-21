@@ -9,7 +9,7 @@ const Project = ({ bg , project}) => {
     <div className={`min-w-[90%] lg:min-w-[70%] h-5/6 md:mx-8 project`}>
       <div className="space-y-4">
         <div className="relative">
-          <Image className="absolute w-full h-full object-cover rounded-3xl" src={`/unsplash-${bg}.jpg`} height={650} width={900} alt="unsplash"/>
+          <Image className="absolute w-full h-full object-cover rounded-3xl" src={`/unsplash-${bg}.webp`} height={650} width={900} alt="unsplash"/>
           <div className="p-4 md:p-10">
             <Image className="w-full h-full object-cover rounded-2xl opacity-95" src={project?.ss} height={650} width={900} alt="preview"/>
           </div>
