@@ -5,8 +5,9 @@ import Image from "next/image";
 import React, { useRef } from "react";
 
 const Project = ({ bg , project}) => {
+
   return (
-    <div className={`min-w-[90%] lg:min-w-[70%] h-5/6 md:mx-8 project`}>
+    <div className={`min-w-[90%] lg:min-w-[80%] h-5/6 md:mx-8 project`}>
       <div className="space-y-4">
         <div className="relative">
           <Image className="absolute w-full h-full object-cover rounded-3xl" src={`/unsplash-${bg}.webp`} height={650} width={900} alt="unsplash"/>
@@ -77,7 +78,7 @@ const Projects = () => {
           // markers: true
         }
       })
-      projectSlideTl.to('.project-show', {x: -window.innerWidth * .7 * (projectsArray.length-1), ease: 'none'})
+      projectSlideTl.to('.project-show', {x: -window.innerWidth * (projectsArray.length-1), ease: 'none'})
     }
 
   });

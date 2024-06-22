@@ -57,6 +57,8 @@ const Banner = () => {
     tl.to(".panel-1", { x: "-100%", duration: 1 })
       .to(".panel-2", { x: "-100%", duration: 0.75 }, "-=.75")
       .to(".panel-3", { x: "-100%", duration: 0.5 }, "-=.5");
+
+
   });
 
   const handleMove = contextSafe((e) => {
