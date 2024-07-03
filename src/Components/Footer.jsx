@@ -21,6 +21,7 @@ const Footer = () => {
       stagger: 0.05,
       ease: "power3.out",
       scrollTrigger: { trigger: ".foot-heading", start: "center bottom" },
+      duration: 2
     });
   });
 

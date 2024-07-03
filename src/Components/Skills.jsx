@@ -102,7 +102,7 @@ const Skills = () => {
       
       <div ref={container} className="w-11/12 mx-auto py-20">
           <div className="relative skill-pannel">
-            <Image alt="blob" className="absolute right-1/2 top-1/2  -translate-y-1/2 translate-x-1/2" src='/blob-sm.svg' height={900} width={900}/>
+            <Image alt="blob" className="absolute right-1/2 top-1/2 -translate-y-1/2 translate-x-1/2" src='/blob-sm.svg' height={900} width={900}/>
             <div className="z-10 overflow-hidden clippy flex items-center justify-center text-7xl lg:text-[200px] text-lightDark font-bold">
               
               {skillArr.map((l, i) => (

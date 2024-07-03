@@ -4,6 +4,7 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/all";
 import Image from "next/image";
 import { useEffect } from "react";
+import Mangnet from "./Mangnet";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -61,18 +62,6 @@ const Banner = () => {
 
   });
 
-  const handleMove = contextSafe((e) => {
-    const { clientX, clientY } = e;
-    const { height, width, top, left } = e.target.getBoundingClientRect();
-    const x = clientX - (left + width/2);
-    const y = clientY -(top + height/2);
-    gsap.to('.blob', { x: x, y: y, scale: 1.1});
-  });
-
-  const handleLeave = contextSafe((e) => {
-    gsap.to('.blob', {x: 0, y: 0, scale: 1})
-  });
-
   return (
     <div className="overflow-x-hidden">
       <div className="-z-10 pic w-full h-full fixed top-0 banner bg-cover bg-[url(/profile-mobile.jpg)] md:bg-[url(/profileCrop.png)] bg-no-repeat bg-fixed"></div>
@@ -93,27 +82,25 @@ const Banner = () => {
             <h1 className={`translate-y-32 banner-headers`}>SATIRTHA ROY</h1>
           </div>
           {/* blobs */}
-          <div
-            onMouseMove={handleMove}
-            onMouseLeave={handleLeave}
-            className="absolute left-4 md:left-24 -z-10"
-          >
-            <div className="size-36 relative">
-              <Image
-                alt="Blob"
-                className="absolute opacity-0 scale-50 blob"
-                src="/blob-sm.svg"
-                width={116}
-                height={116}
-              />
-              <Image
-                alt="Blob"
-                className="absolute blob opacity-0 scale-50 bottom-0 right-0 rotate-180"
-                src="/blob-sm.svg"
-                width={116}
-                height={116}
-              />
-            </div>
+          <div className="absolute left-4 md:left-24 -z-10">
+            <Mangnet>
+              <div className="size-36 relative">
+                <Image
+                  alt="Blob"
+                  className="absolute opacity-0 scale-50 blob"
+                  src="/blob-sm.svg"
+                  width={116}
+                  height={116}
+                />
+                <Image
+                  alt="Blob"
+                  className="absolute blob opacity-0 scale-50 bottom-0 right-0 rotate-180"
+                  src="/blob-sm.svg"
+                  width={116}
+                  height={116}
+                />
+              </div>
+            </Mangnet>
           </div>
         </div>
       </div>
